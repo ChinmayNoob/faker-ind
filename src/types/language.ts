@@ -1,4 +1,4 @@
-export enum Locals {
+export enum Language {
     ENGLISH,
     HINDI,
     BENGALI,
