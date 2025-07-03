@@ -1,11 +1,11 @@
 import { test, describe, beforeEach, expect } from 'vitest';
-import { createFakerInd, Language } from '@/index';
+import { fakerInd, Language } from '@/index';
 import { Languages } from '@/types/language';
 
 describe('FakerInd', () => {
     describe('Constructor', () => {
         test('should initialize with default language (ENGLISH) when no language specified', () => {
-            const faker = createFakerInd({});
+            const faker = fakerInd({});
 
             // Check that all modules are properly initialized
             expect(faker.random).toBeDefined();
@@ -16,7 +16,7 @@ describe('FakerInd', () => {
         });
 
         test('should initialize with specified language', () => {
-            const faker = createFakerInd({ language: "Hindi" });
+            const faker = fakerInd({ language: "Hindi" });
 
             // Check that all modules are properly initialized
             expect(faker.random).toBeDefined();
@@ -28,7 +28,7 @@ describe('FakerInd', () => {
 
         test('should throw error for invalid options', () => {
             expect(() => {
-                createFakerInd({ language: 'invalid-language' as Language });
+                fakerInd({ language: 'invalid-language' as Language });
             }).toThrow('Invalid options:');
         });
 
@@ -36,7 +36,7 @@ describe('FakerInd', () => {
             // Test all supported languages
             Languages.forEach(language => {
                 expect(() => {
-                    const faker = createFakerInd({ language });
+                    const faker = fakerInd({ language });
                     // Verify all modules are initialized
                     expect(faker.random).toBeDefined();
                     expect(faker.account).toBeDefined();
@@ -49,7 +49,7 @@ describe('FakerInd', () => {
 
         test('should generate valid data for all languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Test that basic functionality works for each language
                 expect(() => {
@@ -82,10 +82,10 @@ describe('FakerInd', () => {
     });
 
     describe('setLanguage', () => {
-        let faker: ReturnType<typeof createFakerInd>;
+        let faker: ReturnType<typeof fakerInd>;
 
         beforeEach(() => {
-            faker = createFakerInd({ language: "English" });
+            faker = fakerInd({ language: "English" });
         });
 
         test('should update language successfully', () => {
@@ -121,10 +121,10 @@ describe('FakerInd', () => {
     });
 
     describe('Module Integration', () => {
-        let faker: ReturnType<typeof createFakerInd>;
+        let faker: ReturnType<typeof fakerInd>;
 
         beforeEach(() => {
-            faker = createFakerInd({ language: "English" });
+            faker = fakerInd({ language: "English" });
         });
 
         test('should have working random module', () => {
@@ -169,7 +169,7 @@ describe('FakerInd', () => {
             const results: Record<string, string> = {};
 
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
                 results[language] = faker.name.firstName();
             });
 
@@ -180,7 +180,7 @@ describe('FakerInd', () => {
 
         test('should generate consistent data structure across all languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Test name methods
                 const firstName = faker.name.firstName();
@@ -210,7 +210,7 @@ describe('FakerInd', () => {
 
         test('should maintain data quality across languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Generate multiple samples to check consistency
                 const firstNames = Array.from({ length: 5 }, () => faker.name.firstName());
@@ -239,7 +239,7 @@ describe('FakerInd', () => {
     describe('Error Handling', () => {
         test('should handle ZodError and convert to readable error message', () => {
             expect(() => {
-                createFakerInd({ invalidProperty: 'test' } as any);
+                fakerInd({ invalidProperty: 'test' } as any);
             }).toThrow('Invalid options:');
         });
 
@@ -250,14 +250,14 @@ describe('FakerInd', () => {
             // This test ensures that non-ZodErrors are properly re-thrown
             // In normal usage, this shouldn't happen, but it's good to test error handling
             expect(() => {
-                createFakerInd({});
+                fakerInd({});
             }).not.toThrow();
         });
 
         test('should handle errors gracefully for all languages', () => {
             Languages.forEach(language => {
                 // Test that invalid operations don't crash the system
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 expect(() => {
                     // These should all work without throwing

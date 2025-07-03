@@ -2,10 +2,38 @@
   "name": "faker-ind",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
-  "license": "ISC",
-  "keywords": [],
+  "description": "Generate Fake Contextual Data For India Region",
+  "author": "Chinmay Sawant<chinmaypvt04@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "faker",
+    "fake-data",
+    "india",
+    "indian",
+    "generator",
+    "random",
+    "hindi",
+    "bengali",
+    "tamil",
+    "telugu",
+    "gujarati",
+    "marathi",
+    "kannada",
+    "malayalam",
+    "punjabi",
+    "urdu",
+    "phone-numbers",
+    "names",
+    "lorem"
+  ],
+  "homepage": "https://github.com/ChinmayNoob/faker-ind#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChinmayNoob/faker-ind.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChinmayNoob/faker-ind/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

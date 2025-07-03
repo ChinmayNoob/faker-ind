@@ -1,4 +1,4 @@
-import { createFakerInd, type Language } from '@/index';
+import { fakerInd, type Language } from '@/index';
 import { Languages } from '@/types/language';
 
 // Example usage of FakerInd for manual testing
@@ -6,7 +6,7 @@ console.log('=== FakerInd Manual Testing Examples ===\n');
 
 // Test with default language (English)
 console.log('1. Testing with default language (English):');
-const fakerEn = createFakerInd({});
+const fakerEn = fakerInd({});
 
 console.log('Random number:', fakerEn.random.number(1, 100));
 console.log('Account number:', fakerEn.account.accountNumber());
@@ -27,7 +27,7 @@ Languages.forEach((language, index) => {
     console.log('-'.repeat(30));
 
     try {
-        const faker = createFakerInd({ language });
+        const faker = fakerInd({ language });
 
         console.log('Random number:', faker.random.number(1, 100));
         console.log('Account number:', faker.account.accountNumber());
@@ -50,7 +50,7 @@ Languages.forEach((language, index) => {
 
 console.log('\n3. Testing language switching:');
 console.log('='.repeat(50));
-const faker = createFakerInd({ language: "English" });
+const faker = fakerInd({ language: "English" });
 console.log('Initial language (English) - First name:', faker.name.firstName());
 
 // Test switching between different languages
@@ -70,14 +70,14 @@ console.log('='.repeat(50));
 
 // Test invalid options
 try {
-    const invalidFaker = createFakerInd({ invalidProperty: 'test' } as any);
+    const invalidFaker = fakerInd({ invalidProperty: 'test' } as any);
 } catch (error) {
     console.log('✅ Caught schema validation error:', (error as Error).message);
 }
 
 // Test unsupported language operations
 try {
-    const testFaker = createFakerInd({ language: "English" });
+    const testFaker = fakerInd({ language: "English" });
     // Try to use an invalid language that might not be fully implemented
     console.log('Testing edge cases...');
 } catch (error) {
@@ -90,7 +90,7 @@ console.log('='.repeat(50));
 // Test generating multiple items for consistency
 Languages.slice(0, 3).forEach(language => {
     console.log(`\n${language} - Multiple generations:`);
-    const languageFaker = createFakerInd({ language });
+    const languageFaker = fakerInd({ language });
 
     console.log('5 First names:', Array.from({ length: 5 }, () => languageFaker.name.firstName()).join(', '));
     console.log('5 Last names:', Array.from({ length: 5 }, () => languageFaker.name.lastName()).join(', '));
@@ -106,7 +106,7 @@ features.forEach(feature => {
     console.log(`\n${feature.toUpperCase()} across languages:`);
     Languages.slice(0, 5).forEach(language => {
         try {
-            const languageFaker = createFakerInd({ language });
+            const languageFaker = fakerInd({ language });
             let result = '';
 
             switch (feature) {

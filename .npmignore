@@ -1,0 +1,39 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Development files
+.vscode/
+.idea/
+eslint.config.js
+tsconfig.json
+vitest.config.ts
+pnpm-lock.yaml
+
+# Tests
+tests/
+**/*.spec.ts
+**/*.test.ts
+dist/tests/
+
+# Development scripts
+scripts/
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env*
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Build artifacts (keep dist/)
+*.tsbuildinfo 

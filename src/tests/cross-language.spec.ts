@@ -1,5 +1,5 @@
 import { test, describe, expect } from 'vitest';
-import { createFakerInd } from '@/index';
+import { fakerInd } from '@/index';
 import { Languages } from '@/types/language';
 import { Gender } from '@/types/gender';
 
@@ -7,7 +7,7 @@ describe('Cross-Language Module Testing', () => {
     describe('Random Module', () => {
         test('should work consistently across all languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Test number generation
                 const number1 = faker.random.number(1, 100);
@@ -30,7 +30,7 @@ describe('Cross-Language Module Testing', () => {
     describe('Account Module', () => {
         test('should generate valid account data across all languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Test account number generation (default 16 digits)
                 const accountNumber = faker.account.accountNumber();
@@ -53,7 +53,7 @@ describe('Cross-Language Module Testing', () => {
     describe('Phone Module', () => {
         test('should generate valid phone numbers across all languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Test phone number (always +91 format)
                 const phone = faker.phone.number();
@@ -80,7 +80,7 @@ describe('Cross-Language Module Testing', () => {
     describe('Name Module', () => {
         test('should generate valid names across all languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Test first name generation
                 const firstName = faker.name.firstName();
@@ -119,7 +119,7 @@ describe('Cross-Language Module Testing', () => {
 
         test('should generate different names for different genders', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Generate multiple names for each gender
                 const maleNames = Array.from({ length: 10 }, () => faker.name.firstName(Gender.MALE));
@@ -148,7 +148,7 @@ describe('Cross-Language Module Testing', () => {
     describe('Lorem Module', () => {
         test('should generate valid lorem text across all languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Test word generation
                 const word = faker.lorem.word();
@@ -169,7 +169,7 @@ describe('Cross-Language Module Testing', () => {
 
         test('should generate consistent lorem content quality', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Generate multiple samples
                 const words = Array.from({ length: 10 }, () => faker.lorem.word());
@@ -201,7 +201,7 @@ describe('Cross-Language Module Testing', () => {
     describe('Data Consistency', () => {
         test('should maintain consistent behavior across multiple generations per language', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Generate multiple items and ensure consistency
                 const iterations = 20;
@@ -231,7 +231,7 @@ describe('Cross-Language Module Testing', () => {
 
         test('should generate unique values across calls', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 // Generate sets of data
                 const firstNames = new Set(Array.from({ length: 50 }, () => faker.name.firstName()));
@@ -253,7 +253,7 @@ describe('Cross-Language Module Testing', () => {
     describe('Performance', () => {
         test('should maintain reasonable performance across all languages', () => {
             Languages.forEach(language => {
-                const faker = createFakerInd({ language });
+                const faker = fakerInd({ language });
 
                 const startTime = Date.now();
 

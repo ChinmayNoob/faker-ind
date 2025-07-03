@@ -9,7 +9,7 @@ import * as phoneUtils from '@/phone'
 import * as randomUtils from '@/random'
 import { fakerIndOptsSchema } from '@/schema'
 
-export function createFakerInd(opts: FakerIndOpts) {
+export function fakerInd(opts: FakerIndOpts) {
   try {
     fakerIndOptsSchema.parse(opts)
     let language: Language = opts.language ?? 'English'
