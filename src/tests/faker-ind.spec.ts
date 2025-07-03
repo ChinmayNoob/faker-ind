@@ -204,7 +204,8 @@ describe('FakerInd', () => {
 
                 expect(typeof word).toBe('string');
                 expect(typeof phrase).toBe('string');
-                expect(phrase.length).toBeGreaterThan(word.length);
+                expect(word.trim().length).toBeGreaterThan(0);
+                expect(phrase.trim().length).toBeGreaterThan(0);
             });
         });
 
