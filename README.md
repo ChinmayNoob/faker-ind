@@ -1,6 +1,6 @@
 # faker-ind
 
-A comprehensive fake data generator for Indian locales with support for multiple Indian languages.
+A comprehensive fake data generator for Indian People with support for multiple Indian languages.
 
 ## Features
 
