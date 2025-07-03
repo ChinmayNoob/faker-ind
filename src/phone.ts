@@ -1,5 +1,5 @@
-import { serviceProviders } from './common/phone';
-import type { Random } from './random';
+import { serviceProviders } from '@/common/phone';
+import type { Random } from '@/random';
 
 export class Phone {
   private random: Random;

@@ -1,5 +1,5 @@
 import { test, describe, beforeEach, expect } from 'vitest';
-import { FakerInd, Language } from '../index';
+import { FakerInd, Language } from '@/index';
 
 describe('FakerInd', () => {
     describe('Constructor', () => {

@@ -1,7 +1,7 @@
 import { describe, test, expect, beforeAll } from 'vitest';
-import { Account } from '../account';
-import { banks } from '../common/banks';
-import { Random } from '../random';
+import { Account } from '@/account';
+import { banks } from '@/common/banks';
+import { Random } from '@/random';
 
 
 describe('Account', () => {

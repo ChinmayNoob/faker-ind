@@ -1,8 +1,8 @@
-import type { LocalPerson } from "./languages";
-import type { Random } from "./random";
-import { HindiLocals } from "./languages/hindi";
-import { Language } from "./types/language";
-import { EnglishLocals } from "./languages/english";
+import type { LocalPerson } from "@/languages";
+import type { Random } from "@/random";
+import { HindiLocals } from "@/languages/hindi";
+import { Language } from "@/types/language";
+import { EnglishLocals } from "@/languages/english";
 
 export class Lorem {
     private language: Language;

@@ -1,6 +1,6 @@
-import { test, describe, beforeAll, beforeEach, expect } from 'vitest';
+import { test, describe, beforeEach, expect } from 'vitest';
 
-import { Random } from '../random';
+import { Random } from '@/random';
 
 describe('Random', () => {
   let rand: Random;

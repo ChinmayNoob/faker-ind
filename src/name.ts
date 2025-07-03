@@ -1,9 +1,9 @@
-import type { LocalPerson } from "./languages";
-import { EnglishLocals } from "./languages/english";
-import { HindiLocals } from "./languages/hindi";
-import type { Random } from "./random";
-import { Gender } from "./types/gender";
-import { Language } from "./types/language";
+import type { LocalPerson } from "@/languages";
+import { EnglishLocals } from "@/languages/english";
+import { HindiLocals } from "@/languages/hindi";
+import type { Random } from "@/random";
+import { Gender } from "@/types/gender";
+import { Language } from "@/types/language";
 
 export class Name {
     private language: Language;

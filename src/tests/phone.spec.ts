@@ -1,8 +1,8 @@
 import { describe, test, expect, beforeEach } from 'vitest';
 
-import { Phone } from '../phone';
-import { serviceProviders } from '../common/phone';
-import { Random } from '../random';
+import { Phone } from '@/phone';
+import { serviceProviders } from '@/common/phone';
+import { Random } from '@/random';
 
 describe('Phone', () => {
     let phone: Phone;

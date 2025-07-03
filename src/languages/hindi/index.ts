@@ -1,8 +1,8 @@
-import { LocalPerson } from "..";
-import { Random } from "../../random";
-import { Gender } from "../../types/gender";
-import { femaleFirstNames, lastNames, maleFirstNames, prefix } from "./names";
-import { phrases, words } from "./words";
+import { LocalPerson } from "@/languages";
+import { Random } from "@/random";
+import { Gender } from "@/types/gender";
+import { femaleFirstNames, lastNames, maleFirstNames, prefix } from "@/languages/hindi/names";
+import { phrases, words } from "@/languages/hindi/words";
 
 class HindiLocals implements LocalPerson{
     private random :Random;

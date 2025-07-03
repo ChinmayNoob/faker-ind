@@ -1,4 +1,4 @@
-import { Random } from './random';
+import { Random } from '@/random';
 
 export const slugify = (str: string): string =>
     str.replace(/ /g, '-').replace(/[^\w.-]+/g, '');

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Language } from "./types/language";
+import { Language } from "@/types/language";
 
 export const fakerIndOptsSchema = z.object({
     language: z.nativeEnum(Language).optional(),

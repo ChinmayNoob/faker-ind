@@ -1,4 +1,4 @@
-import { alphaNumericChars, hexaDecimalChars } from './common/char';
+import { alphaNumericChars, hexaDecimalChars } from '@/common/char';
 
 export class Random {
     /**

@@ -1,11 +1,11 @@
 import { ZodError } from "zod";
-import { Language } from "./types/language";
-import { fakerIndOptsSchema, type FakerIndOpts } from "./schema";
-import { Random } from "./random";
-import { Account } from "./account";
-import { Phone } from "./phone";
-import { Name } from "./name";
-import { Lorem } from "./lorem";
+import { Language } from "@/types/language";
+import { fakerIndOptsSchema, type FakerIndOpts } from "@/schema";
+import { Random } from "@/random";
+import { Account } from "@/account";
+import { Phone } from "@/phone";
+import { Name } from "@/name";
+import { Lorem } from "@/lorem";
 
 class FakerInd {
     private language: Language;
