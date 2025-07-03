@@ -1,7 +1,7 @@
 {
   "name": "@chinmayn00b/faker-ind",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate Fake Contextual Data For India Region",
   "author": "Chinmay Sawant<chinmaypvt04@gmail.com>",
   "license": "MIT",
