@@ -1,10 +1,10 @@
 import { test, describe, beforeEach, expect } from 'vitest';
-import { FakerInd, Language } from '@/index';
+import { createFakerInd, Language } from '@/index';
 
 describe('FakerInd', () => {
     describe('Constructor', () => {
         test('should initialize with default language (ENGLISH) when no language specified', () => {
-            const faker = new FakerInd({});
+            const faker = createFakerInd({});
 
             // Check that all modules are properly initialized
             expect(faker.random).toBeDefined();
@@ -15,7 +15,7 @@ describe('FakerInd', () => {
         });
 
         test('should initialize with specified language', () => {
-            const faker = new FakerInd({ language: Language.HINDI });
+            const faker = createFakerInd({ language: "Hindi" });
 
             // Check that all modules are properly initialized
             expect(faker.random).toBeDefined();
@@ -27,21 +27,20 @@ describe('FakerInd', () => {
 
         test('should throw error for invalid options', () => {
             expect(() => {
-                // @ts-expect-error - Testing invalid input
-                new FakerInd({ language: 'invalid-language' });
+                createFakerInd({ language: 'invalid-language' as Language });
             }).toThrow('Invalid options:');
         });
 
         test('should work with all supported languages', () => {
             // Currently only English and Hindi are fully implemented
-            const languages = [
-                Language.ENGLISH,
-                Language.HINDI,
+            const languages: Language[] = [
+                "English",
+                "Hindi",
             ];
 
             languages.forEach(language => {
                 expect(() => {
-                    const faker = new FakerInd({ language });
+                    const faker = createFakerInd({ language });
                     // Verify all modules are initialized
                     expect(faker.random).toBeDefined();
                     expect(faker.account).toBeDefined();
@@ -54,34 +53,34 @@ describe('FakerInd', () => {
     });
 
     describe('setLanguage', () => {
-        let faker: FakerInd;
+        let faker: ReturnType<typeof createFakerInd>;
 
         beforeEach(() => {
-            faker = new FakerInd({ language: Language.ENGLISH });
+            faker = createFakerInd({ language: "English" });
         });
 
         test('should update language successfully', () => {
             expect(() => {
-                faker.setLanguage(Language.HINDI);
+                faker.setLanguage("Hindi");
             }).not.toThrow();
         });
 
         test('should accept all valid language values', () => {
-            const languages = Object.values(Language).filter(v => typeof v === 'number');
+            const languages: Language[] = ["English", "Hindi"];
 
             languages.forEach(language => {
                 expect(() => {
-                    faker.setLanguage(language as Language);
+                    faker.setLanguage(language);
                 }).not.toThrow();
             });
         });
     });
 
     describe('Module Integration', () => {
-        let faker: FakerInd;
+        let faker: ReturnType<typeof createFakerInd>;
 
         beforeEach(() => {
-            faker = new FakerInd({ language: Language.ENGLISH });
+            faker = createFakerInd({ language: "English" });
         });
 
         test('should have working random module', () => {
@@ -122,8 +121,7 @@ describe('FakerInd', () => {
     describe('Error Handling', () => {
         test('should handle ZodError and convert to readable error message', () => {
             expect(() => {
-                // @ts-expect-error - Testing invalid input
-                new FakerInd({ invalidProperty: 'test' });
+                createFakerInd({ invalidProperty: 'test' } as any);
             }).toThrow('Invalid options:');
         });
 
@@ -134,7 +132,7 @@ describe('FakerInd', () => {
             // This test ensures that non-ZodErrors are properly re-thrown
             // In normal usage, this shouldn't happen, but it's good to test error handling
             expect(() => {
-                new FakerInd({});
+                createFakerInd({});
             }).not.toThrow();
         });
     });

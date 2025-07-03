@@ -1,4 +1,4 @@
-import { Random } from '@/random';
+import { number } from '@/random';
 
 export const slugify = (str: string): string =>
     str.replace(/ /g, '-').replace(/[^\w.-]+/g, '');
@@ -18,9 +18,8 @@ export const pastYear = (years: number, refDate: string): number => {
     };
 
     let currTime = date.getTime();
-    const random = new Random();
     // some time from now to N years ago, in milliseconds
-    currTime -= random.number(range.min, range.max);
+    currTime -= number(range.min, range.max);
     date.setTime(currTime);
     return date.getFullYear();
 };

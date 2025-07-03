@@ -1,27 +1,20 @@
-import { test, describe, beforeEach, expect } from 'vitest';
-
-import { Random } from '@/random';
+import { test, describe, expect } from 'vitest';
+import { number, arrayElement, objectElement, alphanumeric } from '@/random';
 
 describe('Random', () => {
-  let rand: Random;
-
-  beforeEach(() => {
-    rand = new Random();
-  });
-
   describe('number', () => {
     test('random number is never less than the min specified', () => {
-      const num = rand.number(3);
+      const num = number(3);
       expect(num).toBeGreaterThanOrEqual(3);
     });
 
     test('random number is never greater than the max specified', () => {
-      const num = rand.number(3, 5);
+      const num = number(3, 5);
       expect(num).toBeLessThanOrEqual(5);
     });
 
     test('default argument should be between 0 and 9', () => {
-      const num = rand.number();
+      const num = number();
       expect(num).toBeLessThanOrEqual(9);
       expect(num).toBeGreaterThanOrEqual(0);
     });
@@ -31,12 +24,12 @@ describe('Random', () => {
     const items = ['a', 'b', 'c', 'd'];
 
     test('should return undefined when an empty array is passed', () => {
-      const it = rand.arrayElement([]);
+      const it = arrayElement([]);
       expect(it).toBeUndefined();
     });
 
     test('should return a random element from the array passed', () => {
-      const it = rand.arrayElement(items);
+      const it = arrayElement(items);
       expect(items).toContain(it);
     });
   });
@@ -49,18 +42,18 @@ describe('Random', () => {
     };
 
     test('returns undefined when an empty object is passed', () => {
-      const it = rand.objectElement({});
+      const it = objectElement({});
       expect(it).toBeUndefined();
     });
 
     test('returns a random key in the object', () => {
-      const it = rand.objectElement(itemsObj);
+      const it = objectElement(itemsObj);
       expect(Object.keys(itemsObj)).toContain(it);
     });
   });
 
   test('alphanumeric', () => {
-    const randId = rand.alphanumeric(6);
+    const randId = alphanumeric(6);
 
     expect(randId).toHaveLength(6);
   });

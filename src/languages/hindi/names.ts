@@ -28,7 +28,7 @@ export const maleFirstNames = [
     'Varun',
     'Ankit',
     'Rishabh',
-]
+] as const;
 
 export const femaleFirstNames = [
     'Priya',
@@ -66,7 +66,7 @@ export const femaleFirstNames = [
     'Rani',
     'Shilpa',
     'Kritika',
-];
+] as const;
 
 export const lastNames = [
     'Sharma',
@@ -78,6 +78,6 @@ export const lastNames = [
     'Jain',
     'Gupta',
     'Choudhary',
-]
+] as const;
 
-export const prefix = ['Shri', 'Shriman'];
+export const prefix = ['Shri', 'Shriman'] as const;

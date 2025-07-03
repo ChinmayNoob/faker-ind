@@ -31,7 +31,7 @@ export const maleFirstNames = [
     'Friday',
     'Innocent',
     'Prosper',
-];
+] as const;
 
 export const femaleFirstNames = [
     'Jane',
@@ -65,7 +65,7 @@ export const femaleFirstNames = [
     'Robin',
     'Lily',
     'Gisele',
-];
+] as const;
 
 export const lastNames = [
     'Smith',
@@ -83,6 +83,6 @@ export const lastNames = [
     'Simpson',
     'Evans',
     'Pitt',
-];
+] as const;
 
-export const prefix = ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'];
+export const prefix = ['Mr.', 'Mrs.', 'Ms.', 'Miss', 'Dr.', 'Prof.'] as const;

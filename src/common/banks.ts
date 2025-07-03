@@ -35,4 +35,4 @@ export const banks = [
     'JIO PAYMENTS BANK LIMITED',
     'PAYTM PAYMENTS BANK LIMITED',
     'NSDL PAYMENTS BANK LIMITED',
-];
+] as const;

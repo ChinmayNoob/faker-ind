@@ -1,6 +1,6 @@
 import { Gender } from "@/types/gender";
 
-export interface LocalPerson {
+export type LocalPerson = {
     firstName(gender: Gender): string;
     lastName(): string;
     prefix(): string;

@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { Language } from "@/types/language";
+import { Languages } from "@/types/language";
 
 export const fakerIndOptsSchema = z.object({
-    language: z.nativeEnum(Language).optional(),
+    language: z.enum(Languages).optional(),
 }).strict();
 
 export type FakerIndOpts = z.infer<typeof fakerIndOptsSchema>;

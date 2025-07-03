@@ -1,38 +1,33 @@
 import { LocalPerson } from "@/languages";
-import { Random } from "@/random";
+import { arrayElement } from "@/random";
 import { Gender } from "@/types/gender";
 import { femaleFirstNames, lastNames, maleFirstNames, prefix } from "@/languages/english/names";
 import { phrases, words } from "@/languages/english/words";
 
-class EnglishLocals implements LocalPerson{
-    private random :Random;
-    constructor(random:Random){
-        this.random = random;
-    }
+function englishLocals(): LocalPerson {
+    return {
+        firstName(gender: Gender): string {
+            return arrayElement(
+                gender === Gender.MALE ? maleFirstNames : femaleFirstNames,
+            ) as string;
+        },
 
-    public firstName(gender: Gender):string{
-        return this.random.arrayElement(
-            gender===Gender.MALE? maleFirstNames:femaleFirstNames,
-        )as string;
-    }
+        lastName(): string {
+            return arrayElement(lastNames) as string;
+        },
 
-    public lastName():string{
-        return this.random.arrayElement(lastNames)as string;
-    }
+        prefix(): string {
+            return arrayElement(prefix) as string;
+        },
 
-    public prefix():string{
-        return this.random.arrayElement(prefix)as string;
-    }
+        word(): string {
+            return arrayElement(words) as string;
+        },
 
-    public word():string{
-        return this.random.arrayElement(words)as string;
-    }
-
-    public phrase():string{
-        return this.random.arrayElement(phrases)as string;
-    }
-
+        phrase(): string {
+            return arrayElement(phrases) as string;
+        }
+    };
 }
 
-
-export { EnglishLocals };
+export { englishLocals };

@@ -9,4 +9,4 @@ export const serviceProviders = [
     'AIRCEL',
     'TATA DOCOMO',
     'UNINOR',
-];
+] as const;

@@ -35,7 +35,7 @@ export const alphaNumericChars = [
     'x',
     'y',
     'z',
-];
+] as const;
 export const hexaDecimalChars = [
     '0',
     '1',
@@ -59,4 +59,4 @@ export const hexaDecimalChars = [
     'D',
     'E',
     'F',
-];
+] as const;

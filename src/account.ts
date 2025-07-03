@@ -1,24 +1,22 @@
 import { banks } from '@/common/banks';
-import { Random } from '@/random';
+import { arrayElement, number } from '@/random';
 
-export class Account {
-    private random: Random;
+/**
+ * Returns a random bank name
+ */
+export function bank(): string | undefined {
+    return arrayElement(banks);
+}
 
-    constructor(random: Random) {
-        this.random = random;
+/**
+ * Generates a random account number
+ */
+export function accountNumber(count: number = 10): string {
+    let accountNumber: string = '';
+
+    for (let i = 0; i < count; i++) {
+        accountNumber += number(0, 9);
     }
 
-    banks(): string | undefined {
-        return this.random.arrayElement(banks);
-    }
-
-    accountNumber(count: number = 10): string {
-        let accountNumber: string = '';
-
-        for (let i = 0; i < count; i++) {
-            accountNumber += this.random.number(0, 9);
-        }
-
-        return accountNumber;
-    }
+    return accountNumber;
 }

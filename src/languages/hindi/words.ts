@@ -9,7 +9,7 @@ export const words = [
     'Ruko',
     'Aaj',
     'Kal',
-];
+] as const;
 
 export const phrases = [
     'Shukriya Aap Sabka',
@@ -19,5 +19,4 @@ export const phrases = [
     'Tumhara Naaam Kya Hai',
     'Mujhe Samajh Aaya',
     'Mujhe Nahi Pata',
-
-];
+] as const;
