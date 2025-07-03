@@ -14,17 +14,17 @@ A comprehensive fake data generator for Indian People with support for multiple 
 ## Installation
 
 ```bash
-npm install faker-ind
+npm install @chinmay/faker-ind
 # or
-pnpm add faker-ind
+pnpm add @chinmay/faker-ind
 # or
-yarn add faker-ind
+yarn add @chinmay/faker-ind
 ```
 
 ## Usage
 
 ```typescript
-import { fakerInd } from 'faker-ind'
+import { fakerInd } from '@chinmay/faker-ind'
 
 // Initialize with default English locale
 const faker = fakerInd({ language: 'Hindi' })

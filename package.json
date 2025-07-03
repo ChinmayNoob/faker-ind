@@ -1,5 +1,5 @@
 {
-  "name": "faker-ind",
+  "name": "@chinmay/faker-ind",
   "type": "module",
   "version": "1.0.0",
   "description": "Generate Fake Contextual Data For India Region",
