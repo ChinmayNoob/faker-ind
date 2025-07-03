@@ -11,20 +11,30 @@ describe('Phone', () => {
     });
 
     describe('number', () => {
-        test('should generate a local phone number starting with 0', () => {
+        test('should generate a phone number starting with +91', () => {
             const result = number();
 
-            expect(result).toHaveLength(11);
-            expect(result.startsWith('0')).toEqual(true);
-            expect(result).toMatch(/^0\d+$/);
+            expect(result).toHaveLength(13);
+            expect(result.startsWith('+91')).toEqual(true);
+            expect(result).toMatch(/^\+91\d+$/);
         });
 
-        test('should generate an international phone number starting with +91', () => {
+        test('should generate an international phone number starting with +91 when intl is true', () => {
             const result = number(true);
 
             expect(result).toHaveLength(13);
             expect(result.startsWith('+91')).toEqual(true);
             expect(result).toMatch(/^\+91\d+$/);
+        });
+
+        test('should generate consistent format regardless of intl parameter', () => {
+            const localResult = number(false);
+            const intlResult = number(true);
+
+            expect(localResult).toHaveLength(13);
+            expect(intlResult).toHaveLength(13);
+            expect(localResult.startsWith('+91')).toEqual(true);
+            expect(intlResult.startsWith('+91')).toEqual(true);
         });
     });
 });

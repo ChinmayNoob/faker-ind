@@ -1,0 +1,57 @@
+import { M } from "vitest/dist/chunks/reporters.d.BFLkQcL6.js";
+
+export const maleFirstNames = [
+    'Siddh',
+    'Darshil',
+    'Vijay',
+    'Narendra',
+    'Mukesh',
+    'Rajesh',
+    'Sujal',
+    'Pratik',
+    'Het',
+    'Harsh',
+    'Dwij',
+    'Jeet',
+    'Raj',
+    'Shivang',
+    'Shrey',
+    'Chirag',
+    'Ansh',
+    'Trupal'
+] as const;
+
+export const femaleFirstNames = [
+    'Priya',
+    'Tejal',
+    'Khushi',
+    'Riya',
+    'Shrusti',
+    'Riddhi',
+    'Drashti',
+    'Heena',
+    'Jinal',
+    'Kavya',
+    'Rupali',
+    'Kashish',
+    'Ananya',
+    'Aarohi',
+    'Archi',
+    'Yesha',
+    'Pooja',
+    'Prachi',
+    'Pranali',
+] as const;
+
+export const lastNames = [
+    'Patel',
+    'Shah',
+    'Vyas',
+    'Prajapati',
+    'Bhatt',
+    'Parsaniya',
+    'Parmar',
+    'Ambani',
+] as const;
+
+export const prefix = ['Shri', 'Shriman', 'Shrimati'] as const;

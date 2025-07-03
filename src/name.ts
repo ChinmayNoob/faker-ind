@@ -4,6 +4,15 @@ import { hindiLocals } from "@/languages/hindi";
 import { boolean } from "@/random";
 import { Gender } from "@/types/gender";
 import { Language } from "@/types/language";
+import { bengaliLocals } from "./languages/bengali";
+import { tamilLocals } from "./languages/tamil";
+import { teleguLocals } from "./languages/telegu";
+import { marathiLocals } from "./languages/marathi";
+import { gujaratiLocals } from "./languages/gujarati";
+import { kannadaLocals } from "./languages/kannada";
+import { malayalamLocals } from "./languages/malayalam";
+import { urduLocals } from "./languages/urdu";
+import { punjabiLocals } from "./languages/punjabi";
 
 function getLocalPerson(language: Language): LocalPerson {
     switch (language) {
@@ -11,6 +20,24 @@ function getLocalPerson(language: Language): LocalPerson {
             return hindiLocals();
         case "English":
             return englishLocals();
+        case "Bengali":
+            return bengaliLocals();
+        case "Tamil":
+            return tamilLocals();
+        case "Telugu":
+            return teleguLocals();
+        case "Marathi":
+            return marathiLocals();
+        case "Gujarati":
+            return gujaratiLocals();
+        case "Kannada":
+            return kannadaLocals();
+        case "Malayalam":
+            return malayalamLocals();
+        case "Urdu":
+            return urduLocals();
+        case "Punjabi":
+            return punjabiLocals();
         default:
             throw new Error(`Language "${language}" not supported`);
     }

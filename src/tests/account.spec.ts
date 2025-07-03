@@ -11,14 +11,14 @@ describe('Account', () => {
   });
 
   describe('accountNumber', () => {
-    test('should generate an account number with default length of 10', () => {
+    test('should generate an account number with default length of 16', () => {
       const result = accountNumber();
-      expect(result).toMatch(/^\d{10}$/);
+      expect(result).toMatch(/^\d{16}$/);
     });
 
     test('should generate an account number with specified length', () => {
-      const result = accountNumber(15);
-      expect(result).toMatch(/^\d{15}$/);
+      const result = accountNumber(10);
+      expect(result).toMatch(/^\d{10}$/);
     });
 
     test('should generate different account numbers on subsequent calls', () => {
