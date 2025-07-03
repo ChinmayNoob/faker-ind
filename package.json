@@ -13,7 +13,8 @@
     "prepublishOnly": "npm run clean && npm run build",
     "test": "vitest",
     "test:run": "vitest run",
-    "example": "vitest run run-example.test.ts"
+    "example": "vitest run run-example.test.ts",
+    "test:example": "tsx -r tsconfig-paths/register src/tests/faker-ind.example.ts"
   },
   "keywords": [],
   "author": "",

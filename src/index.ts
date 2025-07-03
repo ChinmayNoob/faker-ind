@@ -62,7 +62,7 @@ export function createFakerInd(opts: FakerIndOpts) {
     }
 }
 
-export { Language };
+export type { Language };
 
 
 

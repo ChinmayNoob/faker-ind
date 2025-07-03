@@ -1,4 +1,4 @@
-import { createFakerInd, Language } from '@/index';
+import { createFakerInd, type Language } from '@/index';
 
 // Example usage of FakerInd for manual testing
 console.log('=== FakerInd Manual Testing Examples ===\n');

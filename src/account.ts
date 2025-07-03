@@ -11,7 +11,7 @@ export function bank(): string | undefined {
 /**
  * Generates a random account number
  */
-export function accountNumber(count: number = 10): string {
+export function accountNumber(count: number = 16): string {
     let accountNumber: string = '';
 
     for (let i = 0; i < count; i++) {
