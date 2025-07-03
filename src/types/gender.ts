@@ -1,6 +1,7 @@
-export const Gender = {
-    MALE: "MALE",
-    FEMALE: "FEMALE"
-} as const;
+const _Gender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+} as const
 
-export type Gender = typeof Gender[keyof typeof Gender];
+export { _Gender as Gender }
+export type Gender = (typeof _Gender)[keyof typeof _Gender]

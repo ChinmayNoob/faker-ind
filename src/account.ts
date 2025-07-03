@@ -1,22 +1,22 @@
-import { banks } from '@/common/banks';
-import { arrayElement, number } from '@/random';
+import { banks } from '@/common/banks'
+import { arrayElement, number } from '@/random'
 
 /**
  * Returns a random bank name
  */
 export function bank(): string | undefined {
-    return arrayElement(banks);
+  return arrayElement(banks)
 }
 
 /**
  * Generates a random account number
  */
 export function accountNumber(count: number = 16): string {
-    let accountNumber: string = '';
+  let accountNumber: string = ''
 
-    for (let i = 0; i < count; i++) {
-        accountNumber += number(0, 9);
-    }
+  for (let i = 0; i < count; i++) {
+    accountNumber += number(0, 9)
+  }
 
-    return accountNumber;
+  return accountNumber
 }

@@ -8,7 +8,7 @@ export const words = [
   'excavate',
   'peace',
   'food',
-] as const;
+] as const
 
 export const phrases = [
   'Thanks so much.',
@@ -19,4 +19,4 @@ export const phrases = [
   'How does that sound?',
   'That sounds great.',
   'That helps a lot.',
-] as const;
+] as const

@@ -1,18 +1,18 @@
-import { defineConfig } from 'vitest/config';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'vitest/config'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export default defineConfig({
-    test: {
-        globals: true,
-        environment: 'node',
+  test: {
+    globals: true,
+    environment: 'node',
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
     },
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src'),
-        },
-    },
-}); 
+  },
+})

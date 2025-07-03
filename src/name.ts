@@ -1,50 +1,50 @@
-import type { LocalPerson } from "@/languages";
-import { englishLocals } from "@/languages/english";
-import { hindiLocals } from "@/languages/hindi";
-import { boolean } from "@/random";
-import { Gender } from "@/types/gender";
-import { Language } from "@/types/language";
-import { bengaliLocals } from "./languages/bengali";
-import { tamilLocals } from "./languages/tamil";
-import { teleguLocals } from "./languages/telegu";
-import { marathiLocals } from "./languages/marathi";
-import { gujaratiLocals } from "./languages/gujarati";
-import { kannadaLocals } from "./languages/kannada";
-import { malayalamLocals } from "./languages/malayalam";
-import { urduLocals } from "./languages/urdu";
-import { punjabiLocals } from "./languages/punjabi";
+import type { LocalPerson } from '@/languages'
+import type { Language } from '@/types/language'
+import { englishLocals } from '@/languages/english'
+import { hindiLocals } from '@/languages/hindi'
+import { boolean } from '@/random'
+import { Gender } from '@/types/gender'
+import { bengaliLocals } from './languages/bengali'
+import { gujaratiLocals } from './languages/gujarati'
+import { kannadaLocals } from './languages/kannada'
+import { malayalamLocals } from './languages/malayalam'
+import { marathiLocals } from './languages/marathi'
+import { punjabiLocals } from './languages/punjabi'
+import { tamilLocals } from './languages/tamil'
+import { teleguLocals } from './languages/telegu'
+import { urduLocals } from './languages/urdu'
 
 function getLocalPerson(language: Language): LocalPerson {
-    switch (language) {
-        case "Hindi":
-            return hindiLocals();
-        case "English":
-            return englishLocals();
-        case "Bengali":
-            return bengaliLocals();
-        case "Tamil":
-            return tamilLocals();
-        case "Telugu":
-            return teleguLocals();
-        case "Marathi":
-            return marathiLocals();
-        case "Gujarati":
-            return gujaratiLocals();
-        case "Kannada":
-            return kannadaLocals();
-        case "Malayalam":
-            return malayalamLocals();
-        case "Urdu":
-            return urduLocals();
-        case "Punjabi":
-            return punjabiLocals();
-        default:
-            throw new Error(`Language "${language}" not supported`);
-    }
+  switch (language) {
+    case 'Hindi':
+      return hindiLocals()
+    case 'English':
+      return englishLocals()
+    case 'Bengali':
+      return bengaliLocals()
+    case 'Tamil':
+      return tamilLocals()
+    case 'Telugu':
+      return teleguLocals()
+    case 'Marathi':
+      return marathiLocals()
+    case 'Gujarati':
+      return gujaratiLocals()
+    case 'Kannada':
+      return kannadaLocals()
+    case 'Malayalam':
+      return malayalamLocals()
+    case 'Urdu':
+      return urduLocals()
+    case 'Punjabi':
+      return punjabiLocals()
+    default:
+      throw new Error(`Language "${language}" not supported`)
+  }
 }
 
 function selectRandomGender(): Gender {
-    return boolean() ? Gender.FEMALE : Gender.MALE;
+  return boolean() ? Gender.FEMALE : Gender.MALE
 }
 
 /**
@@ -52,12 +52,12 @@ function selectRandomGender(): Gender {
  *
  * @method firstName
  * @param {Language} language
- * @param {Enum} gender: Gender
+ * @param {Enum} gender
  */
 export function firstName(language: Language, gender?: Gender): string {
-    const chosenGender = gender ?? selectRandomGender();
-    const localPerson = getLocalPerson(language);
-    return localPerson.firstName(chosenGender);
+  const chosenGender = gender ?? selectRandomGender()
+  const localPerson = getLocalPerson(language)
+  return localPerson.firstName(chosenGender)
 }
 
 /**
@@ -67,8 +67,8 @@ export function firstName(language: Language, gender?: Gender): string {
  * @param {Language} language
  */
 export function lastName(language: Language): string {
-    const localPerson = getLocalPerson(language);
-    return localPerson.lastName();
+  const localPerson = getLocalPerson(language)
+  return localPerson.lastName()
 }
 
 /**
@@ -78,8 +78,8 @@ export function lastName(language: Language): string {
  * @param {Language} language
  */
 export function prefix(language: Language): string {
-    const localPerson = getLocalPerson(language);
-    return localPerson.prefix();
+  const localPerson = getLocalPerson(language)
+  return localPerson.prefix()
 }
 
 /**
@@ -89,12 +89,5 @@ export function prefix(language: Language): string {
  * @param {Language} language
  */
 export function fullName(language: Language): string {
-    return `${prefix(language)} ${firstName(language)} ${lastName(language)}`;
+  return `${prefix(language)} ${firstName(language)} ${lastName(language)}`
 }
-
-
-
-
-
-
-

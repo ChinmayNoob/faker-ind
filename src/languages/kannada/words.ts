@@ -1,12 +1,12 @@
 export const words = [
-    'Yellige',
-    'Yaru',
-    'Dhanyavadagalu',
-    'Swalpa'
-] as const;
+  'Yellige',
+  'Yaru',
+  'Dhanyavadagalu',
+  'Swalpa',
+] as const
 export const phrases = [
-    'Neenu heghiddhiya?',
-    'Oo...Jana Sagara',
-    'Avnanna kariyona'
+  'Neenu heghiddhiya?',
+  'Oo...Jana Sagara',
+  'Avnanna kariyona',
 
-] as const;
+] as const

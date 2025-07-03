@@ -1,16 +1,16 @@
 export const words = [
-    'Khoobsurat',
-    'Shandaar',
-    'Salam',
-    'Alwida',
-    'Khudahafiz',
-    'Akhbaar',
-    'Guftgoo',
-    'Muntazir',
+  'Khoobsurat',
+  'Shandaar',
+  'Salam',
+  'Alwida',
+  'Khudahafiz',
+  'Akhbaar',
+  'Guftgoo',
+  'Muntazir',
 
-] as const;
+] as const
 export const phrases = [
-    'Salaam Walekum',
-    'Khuda Hafiz',
-    'Hum na Hoñge Koī Ham Sā Hogā',
-] as const;
+  'Salaam Walekum',
+  'Khuda Hafiz',
+  'Hum na Hoñge Koī Ham Sā Hogā',
+] as const
